@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Beranda - Rekomendasi Tanaman</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "primary": "#23422a",
+              "outline": "#727971",
+              "on-primary-fixed": "#02210c",
+              "surface-bright": "#faf9f8",
+              "outline-variant": "#c2c8bf",
+              "tertiary-fixed": "#e6e3d0",
+              "on-surface-variant": "#424842",
+              "on-tertiary-fixed": "#1c1c11",
+              "on-primary-fixed-variant": "#2e4e35",
+              "tertiary-fixed-dim": "#c9c7b5",
+              "surface-tint": "#45664b",
+              "surface": "#faf9f8",
+              "on-tertiary-container": "#c9c7b5",
+              "primary-fixed-dim": "#abd0af",
+              "surface-container": "#eeeeed",
+              "surface-container-highest": "#e3e2e1",
+              "on-background": "#1a1c1c",
+              "surface-container-low": "#f4f3f2",
+              "surface-dim": "#dadad9",
+              "on-secondary-fixed": "#3c0800",
+              "on-secondary-container": "#742814",
+              "inverse-surface": "#2f3130",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "on-surface": "#1a1c1c",
+              "on-tertiary": "#ffffff",
+              "on-primary-container": "#acd0af",
+              "surface-container-high": "#e9e8e7",
+              "on-tertiary-fixed-variant": "#48473a",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#ffb4a1",
+              "surface-variant": "#e3e2e1",
+              "inverse-primary": "#abd0af",
+              "on-error-container": "#93000a",
+              "secondary-container": "#fc9174",
+              "secondary-fixed": "#ffdbd2",
+              "tertiary-container": "#545345",
+              "on-secondary-fixed-variant": "#7c2e19",
+              "tertiary": "#3c3c2f",
+              "error-container": "#ffdad6",
+              "primary-container": "#3a5a40",
+              "inverse-on-surface": "#f1f0f0",
+              "secondary": "#9a442d",
+              "primary-fixed": "#c7ecca",
+              "on-secondary": "#ffffff",
+              "background": "#faf9f8"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(250, 249, 248, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .leaf-gradient {
+            background: linear-gradient(135deg, #23422a 0%, #3a5a40 100%);
+        }
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background-color: #faf9f8;
+            color: #1a1c1c;
+        }
+        h1, h2, h3 {
+            font-family: "Noto Serif", serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center">
+<svg class="w-8 h-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.1288 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-primary">TanamanKu</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-on-surface hover:text-primary transition-colors" href="#">Rekomendasi Tanaman</a>
+<a class="text-sm font-semibold text-on-surface hover:text-primary transition-colors" href="#">Jadwal Tanam</a>
+<a class="text-sm font-semibold text-on-surface hover:text-primary transition-colors" href="#">Tips</a>
+<a class="text-sm font-semibold text-on-surface hover:text-primary transition-colors" href="#">Tentang Kami</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 leaf-gradient text-surface font-bold rounded-full text-sm hover:opacity-90 transition-opacity">
+                    Daftar Sekarang
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-6 pt-16 pb-24 md:pt-32 md:pb-40">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative z-10 space-y-8">
+            <span class="inline-flex px-4 py-1.5 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold rounded-full uppercase tracking-widest">
+                                    🌱 Panduan Berkebun Digital
+                                </span>
+            <h1 class="text-5xl md:text-7xl font-black text-on-surface leading-[1.1] tracking-tight">
+                                    Temukan Tanaman <br/>
+            <span class="text-primary italic">Ideal</span> untuk Anda
+                                </h1>
+            <p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                                    Dapatkan rekomendasi tanaman terbaik berdasarkan kondisi lingkungan, tingkat keahlian, dan gaya hidup Anda melalui sistem cerdas kami.
+            </p>
+            <div class="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-lg max-w-md">
+                <h3 class="text-lg font-bold mb-4 text-primary">Coba Rekomendasi Tanaman</h3>
+
+                <form action="/rekomendasi" method="GET" class="space-y-4">
+                    
+                    <div>
+                        <label class="text-sm font-semibold">Bulan Tanam</label>
+                        <select name="bulan_tanam" class="w-full mt-1 rounded-lg border-gray-300">
+                            <option>Januari</option>
+                            <option>Februari</option>
+                            <option>Maret</option>
+                            <option>April</option>
+                            <option>Mei</option>
+                            <option>Juni</option>
+                            <option>Juli</option>
+                            <option>Agustus</option>
+                            <option>September</option>
+                            <option>Oktober</option>
+                            <option>November</option>
+                            <option>Desember</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="text-sm font-semibold">Target Panen</label>
+                        <select name="bulan_panen" class="w-full mt-1 rounded-lg border-gray-300">
+                            <option>Maret</option>
+                            <option>April</option>
+                            <option>Mei</option>
+                            <option>Juni</option>
+                            <option>Juli</option>
+                            <option>Agustus</option>
+                            <option>September</option>
+                            <option>Oktober</option>
+                            <option>November</option>
+                            <option>Desember</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full py-3 leaf-gradient text-white font-bold rounded-full">
+                        Tampilkan Rekomendasi
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="relative md:h-[600px]">
+            <!-- Abstract Organic Shapes Background -->
+            <div class="absolute inset-0 bg-primary-fixed/30 rounded-full blur-3xl opacity-50 scale-125 -z-10"></div>
+            <div class="relative h-full w-full rounded-[2.5rem] overflow-hidden shadow-2xl">
+                <img alt="Interior minimalis modern dengan berbagai tanaman hias hijau subur yang tertata rapi" class="w-full h-full object-cover" data-alt="lush indoor plants in a minimalist modern living room with soft natural sunlight streaming through large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCjeqUL6rsi3ki2uxtW1q5p10aQV6ooBAZY7-RGVe8qhvCiQKygrukKTaVEYKCf_b4RVo3z-2RSOSMqm8b58QNLHJBsfSTT1HIia0fDlxfriyhtWFtTYVNGJS-8KLcawu364AiAz3egGeT5EfiW-SqRyYXXLpF3Acak4tkKGQrmqyH0YGTQyE_Un8RFtPfiG55MnMkYXBEgBlW3o4MLuJTdZbPkwk9oGHSvHiszHl3wm3vT_fYjDist6ePRlkuaSHjgx1M__FLzbeC"/>
+                <!-- Floating Glass Card -->
+                <div class="absolute bottom-8 left-8 right-8 glass-nav p-6 rounded-2xl border border-white/20 shadow-lg">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+                            <span class="material-symbols-outlined">psychology</span>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-secondary uppercase tracking-tight">Rekomendasi Hari Ini</p>
+                            <h3 class="text-lg font-bold">Monstera Deliciosa</h3>
+                            <p class="text-sm text-on-surface-variant">Cocok untuk pemula &amp; cahaya rendah.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="px-6 pb-16">
+    <div class="max-w-5xl mx-auto bg-surface-container p-8 rounded-2xl shadow">
+
+        <h2 class="text-2xl font-bold mb-6 text-primary">
+            Contoh Hasil Rekomendasi
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+            
+            <div class="p-4 bg-white rounded-xl shadow">
+                <h3 class="font-bold text-lg">Cabai</h3>
+                <p class="text-sm text-gray-500">Skor: 82</p>
+                <span class="text-green-600 font-semibold">Layak</span>
+            </div>
+
+            <div class="p-4 bg-white rounded-xl shadow">
+                <h3 class="font-bold text-lg">Tomat</h3>
+                <p class="text-sm text-gray-500">Skor: 65</p>
+                <span class="text-yellow-600 font-semibold">Cukup Layak</span>
+            </div>
+
+            <div class="p-4 bg-white rounded-xl shadow">
+                <h3 class="font-bold text-lg">Kangkung</h3>
+                <p class="text-sm text-gray-500">Skor: 90</p>
+                <span class="text-green-600 font-semibold">Layak</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="bg-surface-container-low py-24 md:py-32">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+<h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Layanan Unggulan Kami</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        Kami menggabungkan keahlian botani dengan teknologi untuk memudahkan perjalanan Anda merawat alam di rumah.
+                    </p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Alat Rekomendasi</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            Algoritma cerdas yang menganalisis lokasi, suhu, dan kelembapan udara Anda untuk hasil yang akurat.
+                        </p>
+<a class="inline-flex items-center text-primary font-bold gap-2 group-hover:gap-3 transition-all" href="#">
+                            Coba Sekarang <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-secondary-fixed rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-3xl">calendar_month</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Jadwal Menanam</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            Pengingat otomatis kapan waktu terbaik untuk menyiram, memupuk, dan mengganti media tanam Anda.
+                        </p>
+<a class="inline-flex items-center text-primary font-bold gap-2 group-hover:gap-3 transition-all" href="#">
+                            Kelola Jadwal <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant text-3xl">auto_awesome</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Tips Perawatan</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            Akses ke ribuan artikel dan tutorial dari ahli agronomi profesional khusus untuk kondisi tropis Indonesia.
+                        </p>
+<a class="inline-flex items-center text-primary font-bold gap-2 group-hover:gap-3 transition-all" href="#">
+                            Baca Tips <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section (Social Proof) -->
+<section class="py-24 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-20 relative text-surface">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[150px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">Membantu <span class="text-primary-fixed">100,000+</span> <br/>Pecinta Tanaman</h2>
+<p class="text-lg opacity-80 mb-10 max-w-md">
+                            Bergabunglah dengan komunitas kami dan mulailah menghijaukan setiap sudut ruangan Anda dengan cara yang benar.
+                        </p>
+<div class="flex gap-8 border-t border-surface/10 pt-10">
+<div>
+<p class="text-4xl font-black text-secondary-container">98%</p>
+<p class="text-sm uppercase tracking-widest opacity-60">Kepuasan</p>
+</div>
+<div>
+<p class="text-4xl font-black text-secondary-container">500+</p>
+<p class="text-sm uppercase tracking-widest opacity-60">Jenis Tanaman</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Tanaman hias sukulen yang sehat dalam pot tanah liat" class="w-full h-full object-cover" data-alt="Close-up of vibrant succulents in terracotta pots on a wooden shelf with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmslUZeeYlFWxL9I8VzLKWh4Gj3jo3OtUJR9VglhU43hx7huLSye59FJXpt6QTYfp0w408RFZCYuqROwd7AvSm8fql5I8heajB5ISXmTrrnur0-4TJdAA2qlifh2DkN8Tdy0CwSV6j2mWkeqhPLy0_QMohNbGfS8ebaMt-RdcokC3dSx7c6LKPgF-QuZjcmF70JNzVRfCc93L407kgUx7tsxkURxo7r_FOS7-ThVlFJj7XPFzqx6jhgVk7UlqDylETyUXW-13iAt0p"/>
+</div>
+<div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Taman sayuran organik yang tertata rapi di halaman belakang" class="w-full h-full object-cover" data-alt="Lush organic vegetable garden beds with diverse greens under bright sunny morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALMwk7ZD8sY61HG5sTszGaIjYh4X0-4_e_X52klse2oPdWXeJ167BZQc7cHtQbEmUINC_zquU1Zfs7JkBKQPC4hL34D9xcO8el7ySuQptJjJixPEAkWGJcOAJ4VDbPFKtcKxy3wZo1DnF6qlzH3KH1G5bUgkPJWD1mY2dCcoZEXQKAw3XEpsPoWMIvD7aBUwYSTB8QWU04JE4wBdVcgO9CODwFjkmhI5U8dPRFXJwNPQHS0l_L6rGwYFPU25bg1wG6vfofsYnRKLHp"/>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Seorang wanita merawat tanaman di teras rumah yang cerah" class="w-full h-full object-cover" data-alt="Young woman smiling while watering indoor plants in a sunlit terrace area filled with greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcSWA_l-IiuQTdYXX8TAe5iXlUbe3BWnQdglGeY397_iuUOAPo0q0F8c2bq_-5Jxu5ZRtGHEarQNNOCwAC3NtlHhuNhasbzBVZUMbJeTtcq5wcw4TjZhrNj7cObRx8HnQ0aU4GW3pKTSkmyvdtBy_mJXvrOzhNc9TnnWmESVzInmQ_0roLUuUtqxbt9GNrSQOXeMDHdDnHv8sYnGqMM3nmwek_HcSAjay-oYgjVCgR6ePdZJK68iDHqxxjSoxKBrsjZbQNXftB4g3N"/>
+</div>
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Detail daun hijau besar yang berkilau karena air" class="w-full h-full object-cover" data-alt="Dramatic close-up of a large green leaf with water droplets on the surface and dark moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6BXMy2WPIQeajdDN0Z8s40r5EYQp6x7MtcQPy0NQTAKrF7vX_wyZKvjVvn92IevOCLPSF7dX8NEqPF138YGh2WsMPCcbIyynuO0s1ElmcRdjA6Bd9jNpwH33b8XN70qAALZjQu2xpCeLWxR8ler3W436cj8ES9LNB3QkSucxGrjgiBEHrdAJwPkBgsNTLP_wBgKx_1LjcI0TKFwYu-IEeRllLW1-5WsfETGWs3UAQq2wHYqZhOTaHDVUxphOe2_E5vLCarGqpA98i"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight text-on-surface">Kenapa Memilih TanamanKu?</h2>
+<p class="text-lg text-on-surface-variant">Kami percaya setiap orang bisa memiliki "tangan dingin" dengan bantuan data yang tepat.</p>
+</div>
+<button class="px-8 py-4 bg-secondary-fixed text-on-secondary-fixed font-bold rounded-full hover:bg-secondary-container transition-colors">
+                        Pelajari Selengkapnya
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-3xl flex flex-col items-start gap-4 border border-outline-variant/10">
+<div class="text-primary" data-icon="waving_hand">
+<span class="material-symbols-outlined text-4xl">waving_hand</span>
+</div>
+<h3 class="text-xl font-bold">Mudah Digunakan</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Antarmuka yang ramah dan instruksi langkah demi langkah yang mudah diikuti oleh siapa saja.
+                        </p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl flex flex-col items-start gap-4 border border-outline-variant/10">
+<div class="text-primary" data-icon="database">
+<span class="material-symbols-outlined text-4xl">database</span>
+</div>
+<h3 class="text-xl font-bold">Data Akurat</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Informasi kami divalidasi oleh praktisi agrikultur dan data iklim real-time di Indonesia.
+                        </p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-3xl flex flex-col items-start gap-4 border border-outline-variant/10">
+<div class="text-primary" data-icon="groups">
+<span class="material-symbols-outlined text-4xl">groups</span>
+</div>
+<h3 class="text-xl font-bold">Komunitas Aktif</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                            Ruang diskusi untuk berbagi foto, kendala, dan tips sukses menanam antar sesama hobiis.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Bottom -->
+<section class="py-24 px-6">
+<div class="max-w-4xl mx-auto text-center space-y-8 bg-surface-container-highest rounded-[3rem] p-12 md:p-24 relative overflow-hidden">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/5 rounded-full blur-3xl"></div>
+<h2 class="text-4xl md:text-5xl font-black tracking-tight text-on-surface">Siap Memulai Kebun Impian Anda?</h2>
+<p class="text-xl text-on-surface-variant max-w-2xl mx-auto">
+                    Hanya butuh 2 menit untuk menemukan teman hijau pertama Anda. Coba alat rekomendasi gratis kami sekarang.
+                </p>
+<div class="pt-6">
+<button class="px-12 py-5 leaf-gradient text-surface font-black rounded-full text-xl shadow-2xl shadow-primary/30 hover:scale-105 transition-transform">
+                        Coba Alat Rekomendasi
+                    </button>
+</div>
+</div>
+</section>
+</main>
+
+<section class="py-16 px-6 bg-surface-container-low">
+    <div class="max-w-4xl mx-auto text-center space-y-4">
+        
+        <h2 class="text-3xl font-bold text-primary">
+            Metode yang Digunakan
+        </h2>
+
+        <p class="text-on-surface-variant">
+            Sistem ini menggunakan metode <b>Fuzzy Mamdani</b> untuk menganalisis
+            data suhu, kelembapan, dan curah hujan. Proses meliputi
+            fuzzifikasi, inferensi MIN-MAX, dan defuzzifikasi untuk menghasilkan
+            rekomendasi tanaman yang optimal.
+        </p>
+
+    </div>
+</section>
+
+<footer class="bg-surface-container-lowest py-16 px-6 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+<div class="col-span-2 space-y-6">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center">
+<svg class="w-6 h-6" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.1288 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-primary">TanamanKu</span>
+</div>
+<p class="text-on-surface-variant max-w-sm">
+                    Platform digital terpercaya untuk membimbing Anda menciptakan oase hijau di hunian Anda. Mari lestarikan alam mulai dari rumah sendiri.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-surface transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-surface transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-surface transition-all" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-lg">Menu</h4>
+<ul class="space-y-3 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="light">Rekomendasi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Jadwal Menanam</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tips Perawatan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Katalog Tanaman</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-lg">Dukungan</h4>
+<ul class="space-y-3 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Kebijakan Privasi</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Syarat &amp; Ketentuan</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hubungi Kami</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-outline-variant/10 text-center text-sm text-on-surface-variant opacity-60">
+            © 2024 TanamanKu. Dibuat dengan cinta untuk Indonesia Hijau.
+        </div>
+</footer>
+</body></html>
